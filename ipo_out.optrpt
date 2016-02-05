@@ -1,0 +1,81 @@
+
+Begin optimization report for: main
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ./SHH.c(41,1)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ./SHH.c(48,1)
+   remark #15301: BLOCK WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ./SHH.c(216,2)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at ./SHH.c(71,3)
+   remark #15523: loop was not vectorized: cannot compute loop iteration count before executing the loop.
+LOOP END
+
+LOOP BEGIN at ./SHH.c(103,3)
+   remark #15523: loop was not vectorized: cannot compute loop iteration count before executing the loop.
+LOOP END
+
+LOOP BEGIN at ./SHH.c(135,3)
+   remark #15523: loop was not vectorized: cannot compute loop iteration count before executing the loop.
+LOOP END
+
+LOOP BEGIN at ./SHH.c(190,1)
+   remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ ./SHH.c(196,6) ]
+
+   LOOP BEGIN at ./SHH.c(195,3)
+      remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form.
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: rk4vec
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ./RHF-F.c(7,1) inlined into ./rk4.c(165,8)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ./rk4.c(168,3)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ./RHF-F.c(7,1) inlined into ./rk4.c(172,8)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ./rk4.c(176,3)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ./RHF-F.c(7,1) inlined into ./rk4.c(180,8)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ./rk4.c(184,3)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ./RHF-F.c(7,1) inlined into ./rk4.c(188,8)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ./rk4.c(193,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between u line 195 and u0 line 195
+LOOP END
+===========================================================================

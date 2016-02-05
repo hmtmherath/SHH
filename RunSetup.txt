@@ -1,0 +1,4 @@
+Noise_STD=0.0001
+Time_Step=0.000001
+Num_Steps=200000
+Step_Time=0.001

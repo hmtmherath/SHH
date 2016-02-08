@@ -193,7 +193,7 @@ for (i=0;i<Steps;i++)
 	{
 		condition = true;
 		while(condition) {
-		z1=gsl_ran_gaussian (r,Sigma);
+		z1=gsl_ran_gaussian (r,Sigma/H);
 		rk4vec (ProbSize,t0,H,u1,u2,u3,Y,u4,GK2,GNa,ENa,Eh,mhS,El,Ek,Pol,H,Gl,z1,Gh,mK2S,f);
 		if ( u4[2]<0.0 || u4[2]<0.0 || u4[2]<0.0 )
 		{

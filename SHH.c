@@ -223,7 +223,7 @@ for (i=0;i<Steps;i++)
 		Results.MK2[i]=Y[3];
 		Results.z1[i]=z1;
 	}
-fprintf(fp,"%d %.17g %.17g %.17g %.17g \n",i,Results.Voltage[i],Results.HNa[i],Results.MH[i],Results.MK2[i],Results.z1[i]);
+fprintf(fp,"%d %.17g %.17g %.17g %.17g %.17g\n",i,Results.Voltage[i],Results.HNa[i],Results.MH[i],Results.MK2[i],Results.z1[i]);
 //fprintf(fp,"%d %f %f %f %f \n",i,Results.Voltage[i],Results.HNa[i],Results.MH[i],Results.MK2[i]);
 }//i for loop
 fclose(fp);

@@ -55,6 +55,7 @@ double *Voltage;
 double *HNa;
 double *MH;
 double *MK2;
+double *z1;
 }DSystem;
 
 DSystem Results;
@@ -63,6 +64,7 @@ Results.Voltage=(double *) malloc(Steps*sizeof(double));
 Results.HNa=(double *) malloc(Steps*sizeof(double));
 Results.MH=(double *) malloc(Steps*sizeof(double));
 Results.MK2=(double *) malloc(Steps*sizeof(double));
+Results.z1=(double *) malloc(Steps*sizeof(double));
 
 FILE *file = fopen ( "InitialConditions.txt", "r" );
 if ( file != NULL )
@@ -219,8 +221,9 @@ for (i=0;i<Steps;i++)
 		Results.HNa[i]=Y[1];
 		Results.MH[i]=Y[2];
 		Results.MK2[i]=Y[3];
+		Results.z1[i]=z1;
 	}
-fprintf(fp,"%d %.17g %.17g %.17g %.17g \n",i,Results.Voltage[i],Results.HNa[i],Results.MH[i],Results.MK2[i]);
+fprintf(fp,"%d %.17g %.17g %.17g %.17g \n",i,Results.Voltage[i],Results.HNa[i],Results.MH[i],Results.MK2[i],Results.z1[i]);
 //fprintf(fp,"%d %f %f %f %f \n",i,Results.Voltage[i],Results.HNa[i],Results.MH[i],Results.MK2[i]);
 }//i for loop
 fclose(fp);

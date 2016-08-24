@@ -18,7 +18,7 @@ void main(int argc ,char** argv)
 ////char **argv; /* contains the arguments themselves */
 {
 bool condition;
-double GK2,GNa,mK2S,ENa,Eh,mhS,mK2,El,Ek,Pol,H,Gl,z1,Gh,t0;
+double GK2,GNa,mK2S,ENa,Eh,mhS,mK2,El,Ek,Pol,H,Gl,z1,Gh,t0,sqH;
 double *restrict Y,*restrict u1,*restrict u2,*restrict u3,*restrict u4,*restrict results;
 double Final_Time,Last,Sigma;
 int Steps,i,j,k,ProbSize;
@@ -186,14 +186,14 @@ printf("System Parameters :: \nGNa %f\nmhS %f\nmK2S %f\nPol %f\nEl %f\nEk %f\nEh
 sprintf(FileName,"Results-%d.txt",atoi(argv[1]));    
 fp=fopen(FileName, "w");   
 
-
+sqH=sqrt(H);
 for (i=0;i<Steps;i++)
 {
 	for (j=0;j<Last;j++)
 	{
 		condition = true;
 		while(condition) {
-		z1=gsl_ran_gaussian (r,Sigma/H);
+		z1=gsl_ran_gaussian (r,Sigma/sqH);
 		rk4vec (ProbSize,t0,H,u1,u2,u3,Y,u4,GK2,GNa,ENa,Eh,mhS,El,Ek,Pol,H,Gl,z1,Gh,mK2S,f);
 		if ( u4[2]<0.0 || u4[2]<0.0 || u4[2]<0.0 )
 		{
